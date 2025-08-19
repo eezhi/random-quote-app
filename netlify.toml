@@ -10,7 +10,6 @@
   directory = "netlify/functions"
 
 [[redirects]]
-  # Redirect all /api/* requests to your serverless function
   from = "/api/*"
-  to = "/.netlify/functions/server"
+  to = "/.netlify/functions/server/:splat"
   status = 200
