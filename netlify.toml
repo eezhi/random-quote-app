@@ -1,3 +1,6 @@
+[build]
+  # Build your React frontend
+  command = "cd random-quote-machine && npm install && npm run build"
 # Build React app
   command = "cd random-quote-machine && npm install && npm run build && cd ../netlify/functions && npm install"
 
@@ -5,9 +8,11 @@
   publish = "random-quote-machine/dist"
 
 [functions]
+  # Point Netlify to your functions folder
   directory = "netlify/functions"
 
 [[redirects]]
+  # Redirect all /api/* requests to your serverless function
   from = "/api/*"
-  to = "/.netlify/functions/server/:splat"
+  to = "/.netlify/functions/server"
   status = 200
