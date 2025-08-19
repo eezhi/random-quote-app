@@ -10,15 +10,6 @@ const quoteColors = [
   '#C3B091', '#483C32', '#36454F', '#708090', '#D2691E', '#6F4E37', '#635147', '#D2B48C'
 ];
 
-//figure out how to use APi instead of manual input like this.
-//we would need a random quote Api that returns a random quote and random author 
-// const QUOTES = [
-//   {text: 'He who eats alone dies alone' , author: 'badman'},       
-//   {text: 'The nations top' , author: 'random man'},      
-//   {text: 'A wise man that forgets to feed his dog is a fool' , author: 'badman2'},       
-//   {text: 'The only way up is down' , author: 'E'}, 
-//   {text: 'The body only responds to the laziness of his mental state', author: 'goldman'}      
-// ]
 
 const App = () =>  {
   //here we are using state to manage the current quote and author
@@ -32,7 +23,7 @@ const App = () =>  {
   const getNewQuote = async () => {
     try{ 
       //making the API request
-      const response = await fetch('http://localhost:3001/api/quote');
+      const response = await fetch('/api/quote');
 
       // parsing the JSON data
       const data = await response.json();
@@ -51,14 +42,7 @@ const App = () =>  {
     }
 
   };
-    //this function gets a random quote and update the state 
-    // const getNewQuote = () => {
-    //   const randomIndex = Math.floor(Math.random() * QUOTES.length);
-    //   const randomQuote = QUOTES[randomIndex];
-    //   setQuote(randomQuote.text);
-    //   setAuthor(randomQuote.author);
-    // };
-
+ 
   //useEffect runs the function once when the component mounts 
   useEffect(() => {
     getNewQuote();

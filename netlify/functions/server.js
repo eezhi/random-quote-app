@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
+const severless = require('serverless-http');
 
 const app = express();
 const PORT = 3001; 
@@ -32,3 +33,5 @@ app.get('/api/quote', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Backend server is listening at http://localhost:${PORT}`);
 });
+
+module.exports.handler = serverless(app);
