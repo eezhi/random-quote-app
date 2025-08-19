@@ -1,8 +1,6 @@
 [build]
-# Build React app
-  command = "cd random-quote-machine && npm install && npm run build && cd ../netlify/functions && npm install"
-
-  # React build output folder
+  # Build React app
+  command = "cd random-quote-machine && npm install && npm run build"
   publish = "random-quote-machine/dist"
 
 [functions]
