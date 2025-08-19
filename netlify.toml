@@ -1,6 +1,4 @@
 [build]
-  # Build your React frontend
-  command = "cd random-quote-machine && npm install && npm run build"
 # Build React app
   command = "cd random-quote-machine && npm install && npm run build && cd ../netlify/functions && npm install"
 
