@@ -1,11 +1,7 @@
-[build]
-  # Build React app
-  command = "cd random-quote-machine && npm install && npm run build"
+command = "cd random-quote-machine && npm install && npm run build && cd ../netlify/functions && npm install"
   publish = "random-quote-machine/dist"
-  functions = "netlify/functions"
 
 [functions]
-  # Point Netlify to your functions folder
   directory = "netlify/functions"
 
 [[redirects]]
