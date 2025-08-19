@@ -1,14 +1,13 @@
-[build]
-  # This command is a single line that builds both your frontend and your backend function's dependencies
+# Build React app
   command = "cd random-quote-machine && npm install && npm run build && cd ../netlify/functions && npm install"
-  
-  # The built files are located in the `dist` folder inside your React app
+
+  # React build output folder
   publish = "random-quote-machine/dist"
-  
+
 [functions]
   directory = "netlify/functions"
-  
+
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/server"
+  to = "/.netlify/functions/server/:splat"
   status = 200
