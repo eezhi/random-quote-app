@@ -1,14 +1,14 @@
 [build]
-  # This command is a single line that builds both your frontend and your backend function's dependencies
-  command = "cd random-quote-machine && npm install && npm run build && cd ../netlify/functions && npm install"
-  
-  # The built files are located in the `dist` folder inside your React app
+  # Build your React frontend
+  command = "cd random-quote-machine && npm install && npm run build"
   publish = "random-quote-machine/dist"
-  
+
 [functions]
+  # Point Netlify to your functions folder
   directory = "netlify/functions"
-  
+
 [[redirects]]
+  # Redirect all /api/* requests to your serverless function
   from = "/api/*"
-  to = "/.netlify/functions/server"
+  to = "/.netlify/functions/:splat"
   status = 200
