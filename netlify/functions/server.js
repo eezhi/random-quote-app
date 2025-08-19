@@ -9,6 +9,7 @@ const PORT = 3001;
 
 app.use(cors()); 
 
+<<<<<<< Updated upstream
 app.get('/api/quote', async (req, res) => {
     const apiKey = process.env.API_KEY; 
     const apiUrl = 'https://api.api-ninjas.com/v1/quotes';
@@ -26,6 +27,21 @@ app.get('/api/quote', async (req, res) => {
     } catch (error){
         console.error("Error fetching quote:", error); 
         res.status(500).json({error: 'Failed to fetch quote'});
+=======
+
+// Quote route
+router.get('/quote', async (req, res) => {
+  const apiKey = process.env.API_KEY;
+  const apiUrl = 'https://api.api-ninjas.com/v1/quotes';
+
+  try {
+    const response = await fetch(apiUrl, {
+      headers: { 'X-Api-Key': apiKey }
+    });
+
+    if (!response.ok) {
+      throw new Error(`API returned an error: ${response.status} ${response.statusText}`);
+>>>>>>> Stashed changes
     }
     }
 );
