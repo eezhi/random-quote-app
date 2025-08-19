@@ -1,6 +1,6 @@
 [build]
-  # Navigate, install dependencies, and then run the build command
-  command = "cd random-quote-machine && npm install && npm run build"
+  # This command is a single line that builds both your frontend and your backend function's dependencies
+  command = "cd random-quote-machine && npm install && npm run build && cd ../netlify/functions && npm install"
   
   # The built files are located in the `dist` folder inside your React app
   publish = "random-quote-machine/dist"
