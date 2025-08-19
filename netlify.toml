@@ -1,5 +1,8 @@
 [build]
-  command = "npm run build"
+  # Navigate into the React app folder before running the build command
+  command = "cd random-quote-machine && npm run build"
+  
+  # The built files are located in the `dist` folder inside your React app
   publish = "random-quote-machine/dist"
   
 [functions]
