@@ -37,7 +37,7 @@ router.get('/quote', async (req, res) => {
 });
 
 // Mount router under /.netlify/functions/server
-app.use('/.netlify/functions/server', router);
+app.use('/', router);
 
 // Local dev server (optional)
 if (process.env.NODE_ENV !== 'production') {
